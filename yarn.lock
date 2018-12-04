@@ -659,6 +659,13 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@johannes-z/office-ui-fabric-vue@^0.2.11":
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/@johannes-z/office-ui-fabric-vue/-/office-ui-fabric-vue-0.2.11.tgz#40ef941ab0e9ebfc0c0cc1a88af8df30f7aa5d44"
+  integrity sha512-joa5gsu/4r653Savgx5m8m8T59XyPMTqgr4cgwrBFWmj05MQkfOR98SNmJXFnGdvBAofUqnkxYeeaghx5qC2Sg==
+  dependencies:
+    vue "^2.5.17"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
