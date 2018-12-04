@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div v-for="(prop, index) in item.widget.component.props"
+    <div v-for="(prop, index) in props"
          :key="index">
-      <Property :type="prop.editorType || prop.type"
-                :value.sync="item.widget.props[index]"
+      <Property :name="index"
+                :type="prop.editorType || prop.type"
+                :value="value[index]"
+                @input="update"
                 :default-value="prop.default" />
       <br>
     </div>
@@ -15,27 +17,22 @@ import Property from './Property.vue'
 export default {
   components: { Property },
   props: {
-    item: {
+    value: {
+      type: Object,
+      required: true
+    },
+    props: {
       type: Object,
       required: true
     }
   },
-  data () {
-    return {
-      props: {}
-    }
-  },
-  mounted () {
-    let widget = this.item.widget
-    let propsData = widget.props
-    let props = widget.component.props
-    for (const key in props) {
-      if (!props.hasOwnProperty(key)) continue
-      const element = props[key]
-      this.$set(this.props, key, {
-        ...element,
-        value: propsData[key]
-      })
+  methods: {
+    update (name, value) {
+      let obj = {
+        ...this.value
+      }
+      obj[name] = value
+      this.$emit('input', obj)
     }
   }
 }

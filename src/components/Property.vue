@@ -14,13 +14,17 @@
 <script>
 export default {
   props: {
+    name: {
+      type: String,
+      required: true
+    },
     type: null,
     value: null,
     defaultValue: null
   },
   methods: {
-    update (event) {
-      this.$emit('update:value', event)
+    update (value) {
+      this.$emit('input', this.name, value)
     }
   },
   mounted () {

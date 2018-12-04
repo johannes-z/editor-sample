@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <h2>Editor</h2>
-    <Editor :item="layout[0]" />
+    <Editor :props="layout[0].widget.component.props"
+            v-model="layout[0].widget.props" />
 
     <hr>
+
     <h2>Widgets</h2>
     <div v-for="(item, index) in layout"
          :key="index">
